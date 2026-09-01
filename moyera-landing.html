@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>모여라 - 스마트 모임 커뮤니티</title>
+<meta name="description" content="모임 개설부터 소통, 일정 투표, 비용 정산까지 — 관심사와 일상을 나누는 사람들이 한곳에서 만나는 스마트 모임 커뮤니티, 모여라.">
+<link rel="icon" href="img/logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SITE HEADER -->
+<header class="site">
+  <div class="nav">
+    <a class="logo" href="#hero"><img src="img/logo.png" alt="모여라 로고">모여라</a>
+    <nav class="links">
+      <a href="#hero">비디오 히어로</a>
+      <a href="#why">기획 의도</a>
+      <a href="#features">핵심 기능 & 화면</a>
+      <a href="#persona">이용자 & 브랜드</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <a class="qr-nav-thumb" href="https://moyora01-app.vercel.app" target="_blank" rel="noopener" title="QR 코드로 앱 열기">
+        <img src="img/moyora.jpg" alt="모여라 QR 코드">
+      </a>
+      <button class="menu-toggle" aria-label="메뉴 열기" onclick="document.getElementById('mnav').classList.toggle('open')"><span></span></button>
+    </div>
+  </div>
+  <nav id="mnav" class="links" style="display:none; flex-direction:column; gap:0; padding:0 28px 18px; max-width:1120px; margin:0 auto;">
+    <a style="padding:10px 0; border-top:1px solid var(--line);" href="#hero">비디오 히어로</a>
+    <a style="padding:10px 0; border-top:1px solid var(--line);" href="#why">기획 의도</a>
+    <a style="padding:10px 0; border-top:1px solid var(--line);" href="#features">핵심 기능 & 화면</a>
+    <a style="padding:10px 0; border-top:1px solid var(--line);" href="#persona">이용자 & 브랜드</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- SECTION 1: HERO & SCROLL SCRUBBING VIDEO BACKGROUND -->
+  <section id="hero" class="hero-scroll-section">
+    <div class="hero-sticky-wrap">
+      <!-- Scroll Scrub Canvas -->
+      <canvas id="hero-canvas"></canvas>
+
+      <!-- Visual Mask Overlay -->
+      <div class="hero-overlay"></div>
+
+      <!-- Hero Content Floating Overlay -->
+      <div class="hero-content-wrap wrap">
+        <div class="hero-text-box" data-reveal>
+          <div class="eyebrow"><span class="live-dot"></span> All-in-one 모임 커뮤니티</div>
+          <h1>흩어진 마음을 잇고,<br><span class="hl">함께의 가치</span>를 실현하다</h1>
+          <p class="lede">모임 개설부터 소통, 일정 투표, 비용 정산까지 — 관심사와 일상을 나누는 사람들이 한곳에서 만나는 스마트 모임 커뮤니티, <strong>모여라</strong>입니다.</p>
+          
+          <div class="hero-ctas">
+            <a class="qr-hero-link" href="https://moyora01-app.vercel.app" target="_blank" rel="noopener" title="모여라 앱 바로가기">
+              <img class="qr-hero-img" src="img/moyora.jpg" alt="모여라 QR 코드">
+            </a>
+            <div class="hero-qr-info">
+              <span class="qr-badge">📱 QR SCAN TO ACCESS</span>
+              <span class="hero-url">moyora01-app.vercel.app</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual-badge" data-reveal>
+          <div class="phone-card-preview">
+            <img class="phone-shot" src="img/Redmi%20Note%2011%20Pro-20.jpg" alt="모여라 홈 피드 화면">
+            <span class="floating-tag t1">💬 소통</span>
+            <span class="floating-tag t2">🗳️ 투표</span>
+            <span class="floating-tag t3">💰 정산</span>
+            <span class="floating-tag t4">🔍 탐색</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator Hint -->
+      <div class="scroll-down-hint">
+        <span>SCROLL DOWN</span>
+        <div class="mouse-icon"><div class="wheel"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: WHY MOYERA (WITH SCROLL SCRUBBING VIDEO BACKGROUND & ENTRANCE ANIMATION) -->
+  <section id="why" class="why-scroll-section">
+    <div class="why-sticky-wrap">
+      <!-- Section 2 Canvas Scrubbing Background (moyora02_frame) -->
+      <canvas id="why-canvas"></canvas>
+      <div class="why-overlay"></div>
+
+      <!-- Content Floating Overlay (Reveals from Left/Right/Center upon Scrubbing Completion) -->
+      <div class="why-content-wrap wrap" id="why-content-box">
+        <div class="section-head why-head" data-why-anim="head">
+          <div class="eyebrow dark">Section 02 — Why Moyera</div>
+          <h2>왜 모여라가 필요할까요</h2>
+          <p>단톡방, 캘린더, 투표 앱, 금융 앱으로 흩어져 있던 모임 운영의 번거로움을 하나의 흐름으로 모았습니다.</p>
+        </div>
+
+        <div class="why-list">
+          <div class="why-item" data-why-anim="left">
+            <span class="why-tag">통합</span>
+            <div>
+              <h3>흩어진 도구를 하나로</h3>
+              <p>모임 공지(메신저), 일정 조율(캘린더·투표 툴), 회비 정산(금융 앱)으로 파편화되어 있던 번거로움을 하나의 앱 안에서 끊김 없이 해결합니다.</p>
+            </div>
+          </div>
+
+          <div class="why-item" data-why-anim="center">
+            <span class="why-tag">진입장벽 완화</span>
+            <div>
+              <h3>낮은 문턱, 높은 참여</h3>
+              <p>복잡한 가입 절차 없이 직관적인 UI로 누구나 모임을 열고 탐색할 수 있도록 하여, 지속 가능하고 건강한 온·오프라인 모임 생태계를 만듭니다.</p>
+            </div>
+          </div>
+
+          <div class="why-item" data-why-anim="right">
+            <span class="why-tag">투명성</span>
+            <div>
+              <h3>투명하게, 갈등 없이</h3>
+              <p>명확한 참여자 현황 확인과 N분의 1 정산·미정산 알림 시스템으로 모임 운영의 피로도와 갈등 요소를 최소화합니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: CORE FEATURES & GALLERY -->
+  <section id="features" class="landing-section alt-bg">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div class="eyebrow">Section 03 — Core Features & Screens</div>
+        <h2>모여라의 핵심 기능과 실제 화면</h2>
+        <p>모임 개설부터 정산까지 끊김 없이 이어지는 핵심 기능과 기획·디자인된 앱 스크린샷입니다.</p>
+      </div>
+
+      <!-- Feature Grid -->
+      <div class="feat-grid" data-reveal>
+        <div class="feat-card">
+          <div class="feat-shot" data-lightbox="img/Redmi%20Note%2011%20Pro-29.jpg" data-caption="조건 맞춤 모임 · 제휴 혜택 탐색">
+            <img src="img/Redmi%20Note%2011%20Pro-29.jpg" alt="새로운 모임 및 친구 탐색 화면" loading="lazy">
+          </div>
+          <div class="feat-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5" stroke-linecap="round"/></svg></div>
+          <h3>맞춤형 모임 개설 & 탐색</h3>
+          <p>지역, 관심사, 일정 필터로 빠르게 원하는 모임을 탐색하고, 간편한 단계별 생성 폼으로 누구나 모임을 열 수 있습니다.</p>
+          <div class="feat-tags"><span>지역 필터</span><span>관심사 필터</span><span>제휴 혜택 매칭</span></div>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-shot" data-lightbox="img/Redmi%20Note%2011%20Pro-25.jpg" data-caption="모임 소식 · 공지 · 지도 공유">
+            <img src="img/Redmi%20Note%2011%20Pro-25.jpg" alt="모임 상세 및 공지 화면" loading="lazy">
+          </div>
+          <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16v10H9l-5 4V6z" stroke-linejoin="round"/></svg></div>
+          <h3>실시간 소통 & 그룹 운영 툴</h3>
+          <p>단체 채팅과 중요 공지사항 고정, 모임 장소 지도 공유까지 — 모임 운영에 필요한 소통을 한 화면에서 처리합니다.</p>
+          <div class="feat-tags"><span>단체 채팅</span><span>공지 고정</span><span>지도 공유</span></div>
+        </div>
+
+        <div class="feat-card receipt">
+          <div class="rt-info">
+            <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16l-3-2-3 2-2-2-2 2-3-2-3 2V4z" stroke-linejoin="round"/><path d="M8 9h8M8 13h5" stroke-linecap="round"/></svg></div>
+            <h3>스마트 N분의 1 정산</h3>
+            <p>총비용을 입력하면 참여 인원별로 자동 분할 계산하고, 실시간 입금 상태와 미정산자를 한눈에 확인·알림할 수 있습니다.</p>
+            <div class="feat-tags"><span>자동 분할</span><span>입금 확인</span><span>미정산 콕 찌르기</span></div>
+          </div>
+          <div class="rt-shot" data-lightbox="img/Redmi%20Note%2011%20Pro-7.jpg" data-caption="정산 내역 상세 · 입금 완료 현황">
+            <img src="img/Redmi%20Note%2011%20Pro-7.jpg" alt="정산 내역 상세 화면" loading="lazy">
+          </div>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-shot" data-lightbox="img/Redmi%20Note%2011%20Pro-2.jpg" data-caption="룰렛 돌리기 미니게임">
+            <img src="img/Redmi%20Note%2011%20Pro-2.jpg" alt="룰렛 돌리기 미니게임 화면" loading="lazy">
+          </div>
+          <div class="feat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>미니게임으로 더 즐겁게</h3>
+          <p>룰렛 돌리기와 사다리 타기로 벌칙이나 회비 분담을 재미있게 정하고, 그 결과를 바로 정산에 연결할 수 있습니다.</p>
+          <div class="feat-tags"><span>룰렛 돌리기</span><span>사다리 타기</span><span>결과 연동</span></div>
+        </div>
+      </div>
+
+      <!-- App Gallery Horizontal Filmstrip -->
+      <div class="gallery-subblock" style="margin-top: 56px;">
+        <div class="gallery-head" data-reveal>
+          <h3>앱 실제 화면 갤러리</h3>
+          <p class="film-hint">← Card Click for Lightbox Preview →</p>
+        </div>
+        <div class="filmstrip" data-reveal>
+          <div class="film-item" data-lightbox="img/Redmi%20Note%2011%20Pro.jpg" data-caption="스플래시 화면">
+            <div class="shot-frame"><img src="img/Redmi%20Note%2011%20Pro.jpg" alt="모여라 스플래시 화면" loading="lazy"></div>
+            <div class="film-label">스플래시 화면</div>
+          </div>
+          <div class="film-item" data-lightbox="img/Redmi%20Note%2011%20Pro-1.jpg" data-caption="카카오 소셜 로그인">
+            <div class="shot-frame"><img src="img/Redmi%20Note%2011%20Pro-1.jpg" alt="카카오 소셜 로그인 화면" loading="lazy"></div>
+            <div class="film-label">소셜 로그인</div>
+          </div>
+          <div class="film-item" data-lightbox="img/회원가입목업.jpg" data-caption="간편 회원가입">
+            <div class="shot-frame"><img src="img/회원가입목업.jpg" alt="회원가입 화면" loading="lazy"></div>
+            <div class="film-label">간편 회원가입</div>
+          </div>
+          <div class="film-item" data-lightbox="img/Redmi%20Note%2011%20Pro-24.jpg" data-caption="내 모임 관리 · 나의 모임 그리드">
+            <div class="shot-frame"><img src="img/Redmi%20Note%2011%20Pro-24.jpg" alt="나의 모임 그리드 화면" loading="lazy"></div>
+            <div class="film-label">내 모임 관리</div>
+          </div>
+          <div class="film-item" data-lightbox="img/Redmi%20Note%2011%20Pro-16.jpg" data-caption="모임 상세 · 지도">
+            <div class="shot-frame"><img src="img/Redmi%20Note%2011%20Pro-16.jpg" alt="모임 상세 및 지도 화면" loading="lazy"></div>
+            <div class="film-label">모임 상세 · 지도</div>
+          </div>
+          <div class="film-item" data-lightbox="img/Redmi%20Note%2011%20Pro-3.jpg" data-caption="미니게임 사다리 타기">
+            <div class="shot-frame"><img src="img/Redmi%20Note%2011%20Pro-3.jpg" alt="미니게임 사다리 타기 화면" loading="lazy"></div>
+            <div class="film-label">미니게임 사다리타기</div>
+          </div>
+          <div class="film-item" data-lightbox="img/Redmi%20Note%2011%20Pro-4.jpg" data-caption="영수증 QR 스캔 정산">
+            <div class="shot-frame"><img src="img/Redmi%20Note%2011%20Pro-4.jpg" alt="QR 영수증 스캔 화면" loading="lazy"></div>
+            <div class="film-label">QR 영수증 스캔</div>
+          </div>
+          <div class="film-item" data-lightbox="img/Redmi%20Note%2011%20Pro-26.jpg" data-caption="정산 내역 상세 · 미입금 알림">
+            <div class="shot-frame"><img src="img/Redmi%20Note%2011%20Pro-26.jpg" alt="정산 내역 상세 화면" loading="lazy"></div>
+            <div class="film-label">정산 내역 상세</div>
+          </div>
+          <div class="film-item" data-lightbox="img/Redmi%20Note%2011%20Pro-19.jpg" data-caption="캘린더 일정 확인">
+            <div class="shot-frame"><img src="img/Redmi%20Note%2011%20Pro-19.jpg" alt="캘린더 일정 확인 화면" loading="lazy"></div>
+            <div class="film-label">캘린더 일정</div>
+          </div>
+          <div class="film-item" data-lightbox="img/Redmi%20Note%2011%20Pro-9.jpg" data-caption="마이 프로필 · 활동 요약">
+            <div class="shot-frame"><img src="img/Redmi%20Note%2011%20Pro-9.jpg" alt="마이 프로필 화면" loading="lazy"></div>
+            <div class="film-label">마이 프로필</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: PERSONA & DESIGN SYSTEM & CTA -->
+  <section id="persona" class="landing-section">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <div class="eyebrow">Section 04 — Persona & Design System</div>
+        <h2>이런 분들을 위해 만들었습니다</h2>
+        <p>모임을 운영하는 호스트와 적극적으로 모임을 찾는 참여자 모두를 만족시키는 디테일입니다.</p>
+      </div>
+
+      <!-- Persona Cards -->
+      <div class="persona-grid" data-reveal>
+        <div class="card">
+          <div class="persona-top">
+            <div class="persona-badge">총</div>
+            <div>
+              <div class="name">총무 / 호스트</div>
+              <div class="role">20~30대 직장인</div>
+            </div>
+          </div>
+          <div class="persona-row">
+            <span class="label">Pain Point</span>
+            <p>단톡방에서 날짜 잡기 어렵고, 회비 정산 시 누가 보냈는지 일일이 체크하기 번거로움.</p>
+          </div>
+          <div class="persona-row">
+            <span class="label">Needs</span>
+            <p>캘린더 기반 일정 조율, 투표 도구, 간편한 자동 정산 및 미정산자 확인 기능.</p>
+          </div>
+          <div class="persona-shot" data-lightbox="img/Redmi%20Note%2011%20Pro-22.jpg" data-caption="총무를 위한 정산 현황 대시보드">
+            <img src="img/Redmi%20Note%2011%20Pro-22.jpg" alt="정산 현황 대시보드 미리보기" loading="lazy">
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="persona-top">
+            <div class="persona-badge">참</div>
+            <div>
+              <div class="name">참여자</div>
+              <div class="role">10~20대 대학생 / 사회초년생</div>
+            </div>
+          </div>
+          <div class="persona-row">
+            <span class="label">Pain Point</span>
+            <p>나와 맞는 취미 모임을 찾기 어렵고, 낯선 모임에 참여할 때 정보 부족으로 부담스러움.</p>
+          </div>
+          <div class="persona-row">
+            <span class="label">Needs</span>
+            <p>지역·관심사 맞춤 필터링, 모임 상세 정보와 실시간 채팅을 통한 사전 소통.</p>
+          </div>
+          <div class="persona-shot" data-lightbox="img/회원가입목업.jpg" data-caption="누구나 3초면 끝나는 회원가입">
+            <img src="img/회원가입목업.jpg" alt="회원가입 화면 미리보기" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- Design System Summary -->
+      <div class="ds-container" style="margin-top: 64px;">
+        <h3 style="font-size:24px; margin-bottom:24px;" data-reveal>모여라 브랜드 디자인 시스템</h3>
+        <div class="ds-block" data-reveal>
+          <span class="ds-label">Brand Mark</span>
+          <div class="brand-mark">
+            <img src="img/logo.png" alt="모여라 로고">
+            <div class="bm-text">
+              <strong>모여라 (Moyera)</strong>
+              <span>손을 맞잡은 사람과 물결을 형상화한 로고로, '흩어진 사람들이 모여 함께 흐른다'는 브랜드 메시지를 담았습니다. 네이비(#14120B 계열)와 옐로우(#FEDD13) 조합을 기본으로 사용합니다.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-block" data-reveal style="margin-bottom:0;">
+          <span class="ds-label">Color Palette</span>
+          <div class="swatch-grid">
+            <div class="swatch"><div class="chip" style="background:#FEDD13;"></div><div class="meta"><div class="role">Primary Accent</div><div class="hex">#FEDD13</div></div></div>
+            <div class="swatch"><div class="chip" style="background:#111111;"></div><div class="meta"><div class="role">Base / Charcoal</div><div class="hex">#111111</div></div></div>
+            <div class="swatch"><div class="chip" style="background:#FFFFFF; border-bottom:1px solid var(--line);"></div><div class="meta"><div class="role">Base / Neutral</div><div class="hex">#FFFFFF</div></div></div>
+            <div class="swatch"><div class="chip" style="background:#10B981;"></div><div class="meta"><div class="role">정산 강조 · Green</div><div class="hex">#10B981</div></div></div>
+            <div class="swatch"><div class="chip" style="background:#F491BC;"></div><div class="meta"><div class="role">이벤트 · Pink</div><div class="hex">#F491BC</div></div></div>
+            <div class="swatch"><div class="chip" style="background:#FEE9DA;"></div><div class="meta"><div class="role">Soft Cream</div><div class="hex">#FEE9DA</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- SITE FOOTER & FINAL CTA WITH QR CODE -->
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-cta" data-reveal>
+      <h2>지금, 모여라에서<br>모임을 시작해보세요</h2>
+      <div class="qr-box">
+        <a href="https://moyora01-app.vercel.app" target="_blank" rel="noopener" title="모여라 앱 바로가기">
+          <img class="qr-img" src="img/moyora.jpg" alt="모여라 접속 QR 코드">
+        </a>
+        <p class="qr-hint">QR 코드를 스캔하거나 클릭하여 모여라 앱에 접속해보세요</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 모여라 (Moyera). All rights reserved.</span>
+      <a href="https://moyora01-app.vercel.app" target="_blank" rel="noopener">moyora01-app.vercel.app</a>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX MODAL -->
+<div id="lightbox" class="lightbox">
+  <button class="lightbox-close" aria-label="닫기">✕</button>
+  <figure>
+    <img src="" alt="">
+    <figcaption></figcaption>
+  </figure>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
