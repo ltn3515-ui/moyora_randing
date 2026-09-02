@@ -68,6 +68,9 @@
     }
   }
 
+  var heroScrollHint = document.getElementById('hero-scroll-hint');
+  var whyScrollHint = document.getElementById('why-scroll-hint');
+
   function updateSection1Scrub() {
     if (!heroSection || !canvasS1 || !ctxS1) return;
 
@@ -81,6 +84,16 @@
     if (frame !== currentFrameS1 || imagesLoadedS1 === 1) {
       currentFrameS1 = frame;
       drawCoverImage(ctxS1, canvasS1, imagesS1[currentFrameS1 - 1]);
+    }
+
+    if (heroScrollHint) {
+      if (progress > 0.82) {
+        heroScrollHint.style.opacity = '0';
+        heroScrollHint.style.transform = 'translate(-50%, 12px)';
+      } else {
+        heroScrollHint.style.opacity = '1';
+        heroScrollHint.style.transform = 'translate(-50%, 0)';
+      }
     }
   }
 
@@ -134,6 +147,16 @@
         whyContentBox.classList.add('why-content-visible');
       } else {
         whyContentBox.classList.remove('why-content-visible');
+      }
+    }
+
+    if (whyScrollHint) {
+      if (progress > 0.82) {
+        whyScrollHint.style.opacity = '0';
+        whyScrollHint.style.transform = 'translate(-50%, 12px)';
+      } else {
+        whyScrollHint.style.opacity = '1';
+        whyScrollHint.style.transform = 'translate(-50%, 0)';
       }
     }
   }

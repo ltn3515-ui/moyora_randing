@@ -76,9 +76,10 @@
       </div>
 
       <!-- Scroll Indicator Hint -->
-      <div class="scroll-down-hint">
-        <span>SCROLL DOWN</span>
+      <div class="scroll-down-hint" id="hero-scroll-hint">
         <div class="mouse-icon"><div class="wheel"></div></div>
+        <span class="hint-text">스크롤하여 영상 탐색하기</span>
+        <span class="hint-arrow">↓</span>
       </div>
     </div>
   </section>
@@ -89,6 +90,13 @@
       <!-- Section 2 Canvas Scrubbing Background (moyora02_frame) -->
       <canvas id="why-canvas"></canvas>
       <div class="why-overlay"></div>
+
+      <!-- Scroll Indicator Hint -->
+      <div class="scroll-down-hint why-scroll-hint" id="why-scroll-hint">
+        <div class="mouse-icon"><div class="wheel"></div></div>
+        <span class="hint-text">스크롤하여 스토리 탐색하기</span>
+        <span class="hint-arrow">↓</span>
+      </div>
 
       <!-- Content Floating Overlay (Reveals from Left/Right/Center upon Scrubbing Completion) -->
       <div class="why-content-wrap wrap" id="why-content-box">

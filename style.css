@@ -357,41 +357,76 @@ nav.links a:hover{color:#FEDD13;}
 
 .scroll-down-hint{
   position: absolute;
-  bottom: 24px;
+  bottom: 28px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
+  z-index: 10;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  color: rgba(255,255,255,0.7);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 2px;
+  gap: 10px;
+  background: rgba(14, 12, 7, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 8px 18px;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 16px rgba(254, 221, 19, 0.15);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
 }
-.mouse-icon{
-  width: 22px;
-  height: 36px;
-  border: 2px solid rgba(255,255,255,0.5);
-  border-radius: 12px;
+.scroll-down-hint.why-scroll-hint{
+  bottom: 28px;
+  z-index: 10;
+}
+.scroll-down-hint .mouse-icon{
+  width: 16px;
+  height: 26px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 9px;
   position: relative;
+  flex-shrink: 0;
 }
-.mouse-icon .wheel{
-  width: 4px;
-  height: 8px;
+.scroll-down-hint .mouse-icon .wheel{
+  width: 3px;
+  height: 6px;
   background: #FEDD13;
   border-radius: 2px;
   position: absolute;
-  top: 6px;
+  top: 4px;
   left: 50%;
   transform: translateX(-50%);
-  animation: scrollWheel 2s infinite;
+  animation: scrollWheel 1.8s ease-in-out infinite;
 }
+.scroll-down-hint .hint-text{
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+.scroll-down-hint .hint-arrow{
+  color: #FEDD13;
+  font-size: 13px;
+  font-weight: 900;
+  animation: arrowBounce 1.5s ease-in-out infinite;
+}
+
 @keyframes scrollWheel {
   0% { opacity: 1; transform: translate(-50%, 0); }
-  100% { opacity: 0; transform: translate(-50%, 14px); }
+  60% { opacity: 0.2; transform: translate(-50%, 10px); }
+  100% { opacity: 0; transform: translate(-50%, 0); }
 }
+
+@keyframes arrowBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+
 
 /* ---------- SECTION 2: WHY MOYERA (CANVAS SCRUBBING & ENTRANCE ANIMATION) ---------- */
 .why-scroll-section{
