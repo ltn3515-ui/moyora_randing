@@ -28,9 +28,9 @@
     <th>핵심 기능 & 실제 화면</th>
   </tr>
   <tr>
-    <td><img src="./docs/images/moyora-hero.jpg" alt="모여라 랜딩페이지 비디오 히어로 화면" width="320" /></td>
-    <td><img src="./docs/images/moyora-why.jpg" alt="모여라가 필요한 이유를 설명하는 화면" width="320" /></td>
-    <td><img src="./docs/images/moyora-features.jpg" alt="모여라 핵심 기능과 앱 화면 소개" width="320" /></td>
+    <td><img src="./moyora-hero.jpg" alt="모여라 랜딩페이지 비디오 히어로 화면" width="320" /></td>
+    <td><img src="./moyora-why.jpg" alt="모여라가 필요한 이유를 설명하는 화면" width="320" /></td>
+    <td><img src="./moyora-features.jpg" alt="모여라 핵심 기능과 앱 화면 소개" width="320" /></td>
   </tr>
 </table>
 
@@ -141,7 +141,7 @@ moyora_randing/
 <details>
   <summary><strong>GitHub 저장소 구조 캡처 보기</strong></summary>
   <br />
-  <img src="./docs/images/repository-structure.png" alt="모여라 랜딩페이지 GitHub 저장소 폴더 구조" width="750" />
+  <img src="./repository-structure.png" alt="모여라 랜딩페이지 GitHub 저장소 폴더 구조" width="750" />
 </details>
 
 ## 🛠️ 기술 스택
